@@ -1,0 +1,661 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+html,
+body,
+#bootstrap-overrides {
+    margin: 0;
+    /*background: #202020;*/
+    background: hsl(262, 39%, 20%);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Roboto;
+}
+
+canvas {
+    position: relative;
+}
+
+nav#navbar-mine {
+    top: 51%;
+    position: fixed;
+    /*animation: floating 1s linear infinite;*/
+}
+
+a#mine {
+    border-radius: 36px;
+    width: 100px;
+    height: 30px;
+    line-height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    font-size: 15px;
+}
+
+li#nav-li {
+    list-style: none;
+    display: block;
+    padding: 5px;
+    text-align: center;
+}
+
+button#goback {
+    margin-left: 100%;
+    transform: translate(-100%);
+    margin-bottom: 30px;
+    outline: 0;
+    border: none;
+    border-radius: 46px;
+    width: 180px;
+    height: 40px;
+    line-height: 100%;
+    left: 0%;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    font-size: 28px;
+}
+
+div#aboutme {
+    left: 50%;
+    margin: auto;
+    transform: translate(-50%);
+    display: inline-block;
+    text-align: justify;
+    width: 1000px;
+    height: 100%;
+    justify-content: center;
+    top: 5%;
+    color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+}
+
+
+div#icons {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+a.fab {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+a#top-icons:hover {
+    color: rgba(209, 122, 142, 0.75);
+}
+
+a#top-icons {
+    text-decoration: none;
+}
+
+@media (min-width: 1025px) {
+    div#aboutme {
+        font-size: 24px;
+    }
+    
+    .orbit {
+        width: 900px;
+        height: 900px;
+        border-radius: 100%;
+        display: block;
+        top: 5%;
+        bottom: 50%;
+        left: 0;
+        margin: 0;
+    }
+
+    .orbit li {
+        transform-style: preserve-3d;
+        position: absolute;
+        list-style-type: none;
+        top: -200%;
+        bottom: -200%;
+        left: -1000%;
+        right: -1000%;
+        border: 1px solid;
+        /*border: 5px dotted; */
+        border-color: hsl(260, 38%, 34%);
+        border-radius: 100%;
+        margin: auto;
+    }
+    .orbit li::after {
+        color: rgb(51, 51, 51);
+        text-align: center;
+        line-height: 60px;
+        color: rgba(255, 255, 255, 0.45);
+        position: absolute;
+        height: 60px;
+        /*default*/
+        width: 60px;
+        /*default*/
+        border-radius: 100%;
+        left: 0;
+        right: 0;
+        top: -30px;
+        /*default; has to be half of the height*/
+        margin: auto;
+    }
+    /*"Sun"*/
+    /*fire palette: https://www.color-hex.com/color-palette/18840 */
+    .orbit li:nth-child(1) {
+        background-color: hsl(23, 98%, 75%);
+        border: 5px solid;
+        border-color: hsl(343, 83%, 63%);
+        height: 150px;
+        width: 150px;
+        font-size: 32px;
+        text-align: center;
+        /*color: rgb(51, 51, 51); */
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 140px;
+        /*animation: glow 2s linear infinite;*/
+    }
+    /*1° inner circle*/
+    .orbit li:nth-child(2) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 300px;
+        width: 300px;
+        animation: spindx 6s linear infinite;
+    }
+    .orbit li:nth-child(2)::after {
+        content: "games";
+        background-color: hsl(346, 86%, 65%);
+        /*it was gray*/
+        animation: spinsx 6s linear infinite;
+    }
+    /*2° inner circle*/
+    .orbit li:nth-child(3) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 450px;
+        width: 450px;
+        animation: spinsx 13s linear infinite;
+    }
+    .orbit li:nth-child(3)::after {
+        content: "music";
+        background-color: hsl(322, 41%, 43%);
+        /*it was gray*/
+        animation: spindx 13s linear infinite;
+    }
+    /*asteroids_inner*/
+    .orbit li:nth-child(4) {
+        border: 5px dotted;
+        border-color: rgba(128, 128, 128, 0.55);
+        height: 650px;
+        width: 650px;
+        animation: spindx 36s linear infinite;
+    }
+    /*asteroids_outer*/
+    .orbit li:nth-child(5) {
+        border: 5px dotted;
+        border-color: rgba(128, 128, 128, 0.55);
+        height: 680px;
+        width: 680px;
+        animation: spinsx 36s linear infinite;
+    }
+    /*3° inner circle*/
+    .orbit li:nth-child(6) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 900px;
+        width: 900px;
+        animation: spinsx 18s linear infinite;
+    }
+    .orbit li:nth-child(6)::after {
+        content: "programmer";
+        background-color: hsl(259, 38%, 33%);
+        /*it was gray*/
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        top: -50px;
+        animation: spindx 18s linear infinite;
+    }
+    /*outer circle*/
+    .orbit li:nth-child(7) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 1200px;
+        width: 1200px;
+        animation: spindx 25s linear infinite;
+    }
+    .orbit li:nth-child(7)::after {
+        content: "game dev";
+        background-color: hsl(257, 39%, 27%);
+        /*it was gray*/
+        height: 80px;
+        width: 80px;
+        top: -40px;
+        line-height: 80px;
+        animation: spinsx 25s linear infinite;
+    }
+}
+
+
+/* other devices */
+
+@media (min-width: 380px) and (max-width:1024px) {
+    div#aboutme {
+        /*top: 10%;*/
+        font-size: 15px;
+        width: 290px;
+        height: 90%;
+        padding-bottom: 5%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    button#goback {
+        border-radius: 35px;
+        width: 130px;
+        height: 30px;
+        font-size: 18px;
+    }
+    nav#navbar-mine {
+        top: 55%;
+        width: 200px;
+        margin-left: 50%;
+        margin-right: 50%;
+        transform: translate(-50%);
+        padding: 0;
+        /*animation: floating 1s linear infinite;*/
+    }
+    a#mine {
+        border-radius: 36px;
+        width: 100px;
+        height: 30px;
+        line-height: 100%;
+        background-color: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        font-size: 15px;
+    }
+    li#nav-li {
+        list-style: none;
+        display: block;
+        padding: 5px;
+        text-align: center;
+    }
+    li#myname {
+        display: inline-flex;
+        justify-content: center;
+        text-align: center;
+    }
+    #orbit_container {
+        top: 50%;
+        bottom: 50%;
+        width: 50px;
+        height: 50px;
+        margin-left: 50%;
+        margin-right: 50%;
+        transform: translate(-50%);
+        position: absolute;
+    }
+    .orbit {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        display: block;
+        top: 5%;
+        bottom: 50%;
+        left: 0;
+        margin: 0;
+    }
+    .orbit li {
+        transform-style: preserve-3d;
+        position: absolute;
+        list-style-type: none;
+        top: -200%;
+        bottom: -200%;
+        left: -1000%;
+        right: -1000%;
+        border: 1px solid;
+        border-color: hsl(260, 38%, 34%);
+        border-radius: 100%;
+        margin: auto;
+    }
+    .orbit li::after {
+        color: rgb(51, 51, 51);
+        text-align: center;
+        line-height: 60px;
+        color: rgba(255, 255, 255, 0.45);
+        position: absolute;
+        height: 10px;
+        /*default*/
+        width: 10px;
+        /*default*/
+        border-radius: 100%;
+        left: 0;
+        right: 0;
+        top: -5px;
+        /*default; has to be half of the height*/
+        margin: auto;
+    }
+    /*"Sun"*/
+    /*fire palette: https://www.color-hex.com/color-palette/18840 */
+    .orbit li:nth-child(1) {
+        background-color: hsl(23, 98%, 75%);
+        border: 3px solid;
+        border-color: hsl(343, 83%, 63%);
+        height: 50px;
+        width: 50px;
+        font-size: 32px;
+        text-align: center;
+        /*color: rgb(51, 51, 51); */
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 45px;
+        /*animation: glow 2s linear infinite;*/
+    }
+    /*1° inner circle*/
+    .orbit li:nth-child(2) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 100px;
+        width: 100px;
+        animation: spindx 6s linear infinite;
+    }
+    .orbit li:nth-child(2)::after {
+        content: "";
+        background-color: hsl(346, 86%, 65%);
+        /*it was gray*/
+        animation: spinsx 6s linear infinite;
+    }
+    /*2° inner circle*/
+    .orbit li:nth-child(3) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 200px;
+        width: 200px;
+        animation: spinsx 13s linear infinite;
+    }
+    .orbit li:nth-child(3)::after {
+        content: "";
+        background-color: hsl(322, 41%, 43%);
+        /*it was gray*/
+        animation: spindx 13s linear infinite;
+    }
+    /*asteroids_inner*/
+    .orbit li:nth-child(4) {
+        border: 3px dotted;
+        border-color: rgba(128, 128, 128, 0.4);
+        height: 250px;
+        width: 250px;
+        animation: spindx 36s linear infinite;
+    }
+    /*asteroids_outer*/
+    .orbit li:nth-child(5) {
+        border: 3px dotted;
+        border-color: rgba(128, 128, 128, 0.4);
+        height: 260px;
+        width: 260px;
+        animation: spinsx 36s linear infinite;
+    }
+    /*3° inner circle*/
+    .orbit li:nth-child(6) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 300px;
+        width: 300px;
+        animation: spinsx 18s linear infinite;
+    }
+    .orbit li:nth-child(6)::after {
+        content: "";
+        background-color: hsl(259, 38%, 33%);
+        animation: spindx 18s linear infinite;
+    }
+    /*outer circle*/
+    .orbit li:nth-child(7) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 400px;
+        width: 400px;
+        animation: spindx 25s linear infinite;
+    }
+    .orbit li:nth-child(7)::after {
+        content: "";
+        background-color: hsl(257, 39%, 27%);
+        /*it was gray*/
+        animation: spinsx 25s linear infinite;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 379px) {
+    nav#navbar-mine {
+        padding: 0;
+        width: 100%;
+    }
+    div.container.justify-content-center {
+        width: 100%;
+        margin-left: 50%;
+        margin-right: 50%;
+        transform: translate(-50%);
+    }
+    div#aboutme {
+        top: 10%;
+        font-size: 15px;
+        width: 290px;
+        height: 80%;
+        margin-bottom:15px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    button#goback {
+        border-radius: 35px;
+        width: 130px;
+        height: 30px;
+        font-size: 18px;
+    }
+    nav#navbar-mine {
+        top: 55%;
+        width: 100%;
+        padding: 0;
+        /*animation: floating 1s linear infinite;*/
+    }
+    a#mine {
+        border-radius: 36px;
+        width: 100px;
+        height: 30px;
+        line-height: 100%;
+        background-color: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        font-size: 15px;
+    }
+    li#nav-li {
+        list-style: none;
+        display: block;
+        padding: 5px;
+        text-align: center;
+    }
+    li#myname {
+        display: inline-flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .orbit {
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+        display: block;
+        top: 5%;
+        bottom: 50%;
+        left: 0;
+        margin: 0;
+    }
+    .orbit li {
+        transform-style: preserve-3d;
+        position: absolute;
+        list-style-type: none;
+        top: -50%;
+        bottom: -50%;
+        left: -50%;
+        right: -50%;
+        border: 1px solid;
+        /*border: 5px dotted; */
+        border-color: hsl(260, 38%, 34%);
+        border-radius: 100%;
+        margin: auto;
+    }
+    .orbit li::after {
+        color: rgb(51, 51, 51);
+        text-align: center;
+        line-height: 60px;
+        color: rgba(255, 255, 255, 0.45);
+        position: absolute;
+        height: 10px;
+        /*default*/
+        width: 10px;
+        /*default*/
+        border-radius: 100%;
+        left: 0;
+        right: 0;
+        top: -5px;
+        /*default; has to be half of the height*/
+        margin: auto;
+    }
+    /*"Sun"*/
+    /*fire palette: https://www.color-hex.com/color-palette/18840 */
+    .orbit li:nth-child(1) {
+        background-color: hsl(23, 98%, 75%);
+        border: 2px solid;
+        border-color: hsl(343, 83%, 63%);
+        height: 45px;
+        width: 45px;
+        font-size: 32px;
+        text-align: center;
+        /*color: rgb(51, 51, 51); */
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 44px;
+        /*animation: glow 2s linear infinite;*/
+    }
+    /*1° inner circle*/
+    .orbit li:nth-child(2) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 90px;
+        width: 90px;
+        animation: spindx 6s linear infinite;
+    }
+    .orbit li:nth-child(2)::after {
+        content: "";
+        background-color: hsl(346, 86%, 65%);
+        /*it was gray*/
+        animation: spinsx 6s linear infinite;
+    }
+    /*2° inner circle*/
+    .orbit li:nth-child(3) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 180px;
+        width: 180px;
+        animation: spinsx 13s linear infinite;
+    }
+    .orbit li:nth-child(3)::after {
+        content: "";
+        background-color: hsl(322, 41%, 43%);
+        /*it was gray*/
+        animation: spindx 13s linear infinite;
+    }
+    /*asteroids_inner*/
+    .orbit li:nth-child(4) {
+        border: 3px dotted;
+        border-color: rgba(128, 128, 128, 0.4);
+        height: 230px;
+        width: 230px;
+        animation: spindx 36s linear infinite;
+    }
+    /*asteroids_outer*/
+    .orbit li:nth-child(5) {
+        border: 3px dotted;
+        border-color: rgba(128, 128, 128, 0.4);
+        height: 240px;
+        width: 240px;
+        animation: spinsx 36s linear infinite;
+    }
+    /*3° inner circle*/
+    .orbit li:nth-child(6) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 280px;
+        width: 280px;
+        animation: spinsx 18s linear infinite;
+    }
+    .orbit li:nth-child(6)::after {
+        content: "";
+        background-color: hsl(259, 38%, 33%);
+        animation: spindx 18s linear infinite;
+    }
+    /*outer circle*/
+    .orbit li:nth-child(7) {
+        border-color: rgba(128, 128, 128, 0.15);
+        height: 310px;
+        width: 310px;
+        animation: spindx 25s linear infinite;
+    }
+    .orbit li:nth-child(7)::after {
+        content: "";
+        background-color: hsl(257, 39%, 27%);
+        /*it was gray*/
+        animation: spinsx 25s linear infinite;
+    }
+}
+
+
+/*animations*/
+
+@keyframes spindx {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinsx {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* orbit_container div animations */
+@keyframes disappear {
+    10% {opacity: 1;}
+    100% {opacity:0;}
+}
+@keyframes reappear {
+    0% {opacity:0;}
+    100%{opacity:1;}
+}
+
+/* about div animations */
+@keyframes move-in{
+    from {left: 150%;}
+    to {left: 50%;}
+}
+
+@keyframes move-out{
+    from {left:50%;}
+    to {left: 150%;}
+}
+
+
+
+/*
+@keyframes floating {
+  50% {
+    top:51.4%;
+  }
+  55% {
+    top:51.4%;
+  }
+  100% {
+    top:51%;
+  }
+
+}
+*/
+
+
+/*
+@keyframes glow{
+  50% {
+    background-color: rgb(255,206,0);
+    border-color: rgb(255,0,0);
+    color: rgb(192, 192, 113);
+  }
+  100% {
+    background-color: rgb(255,232,8);
+    border-color: rgb(255,90,0);
+    color: lightgoldenrodyellow;
+  }
+}*/
