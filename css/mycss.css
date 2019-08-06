@@ -95,7 +95,7 @@ a#top-icons {
     div#aboutme {
         font-size: 24px;
     }
-    
+
     .orbit {
         width: 900px;
         height: 900px;
@@ -416,14 +416,19 @@ a#top-icons {
 
 @media (min-width: 300px) and (max-width: 379px) {
     nav#navbar-mine {
-        padding: 0;
-        width: 100%;
-    }
-    div.container.justify-content-center {
+        top: 55%;
         width: 100%;
         margin-left: 50%;
         margin-right: 50%;
         transform: translate(-50%);
+        padding: 0;
+        position: absolute;
+    }
+    li#nav-li {
+        list-style: none;
+        display: block;
+        padding: 5px;
+        text-align: center;
     }
     div#aboutme {
         top: 10%;
@@ -440,12 +445,6 @@ a#top-icons {
         height: 30px;
         font-size: 18px;
     }
-    nav#navbar-mine {
-        top: 55%;
-        width: 100%;
-        padding: 0;
-        /*animation: floating 1s linear infinite;*/
-    }
     a#mine {
         border-radius: 36px;
         width: 100px;
@@ -455,12 +454,6 @@ a#top-icons {
         color: rgba(255, 255, 255, 1);
         text-align: center;
         font-size: 15px;
-    }
-    li#nav-li {
-        list-style: none;
-        display: block;
-        padding: 5px;
-        text-align: center;
     }
     li#myname {
         display: inline-flex;
@@ -509,7 +502,6 @@ a#top-icons {
         margin: auto;
     }
     /*"Sun"*/
-    /*fire palette: https://www.color-hex.com/color-palette/18840 */
     .orbit li:nth-child(1) {
         background-color: hsl(23, 98%, 75%);
         border: 2px solid;
@@ -591,7 +583,6 @@ a#top-icons {
         animation: spinsx 25s linear infinite;
     }
 }
-
 
 /*animations*/
 
